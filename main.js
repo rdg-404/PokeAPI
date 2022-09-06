@@ -2,7 +2,7 @@
 const apiData = {
     url: 'https://pokeapi.co/api/v2/',
     type: 'pokemon',
-    id: '5',
+    id: '19',
 }
 
 const {url, type, id} = apiData //simplicando a obtenção de dados
@@ -20,15 +20,17 @@ fetch(apiUrl)
 const generateHTML = (data) => {
     console.log(data)
     const html = `
-        <div class="name">${data.name}</div>
-        <img src=${data.sprites.front_default}>
-        <div class="details">
-        <span> Height: ${data.height}</span>
-        <span> Weight: ${data.weight}</span>
+        <div class="card-content">
+            <div class="name">${data.name}</div>
+            <img src=${data.sprites.front_default}>
+            <div class="details">
+            <span> Height: ${data.height}</span>
+            <span> Weight: ${data.weight}</span>
+            </div>
         </div>
     `
 
     //linkando o html do js com o html do index
-    const pokemonDiv = document.querySelector('.pokemon')
+    const pokemonDiv = document.querySelector('.card')
     pokemonDiv.innerHTML = html
 }
