@@ -4,6 +4,9 @@ const apiData = {
     id: '25',
 }
 
-const apiUrl = `${apiData.url}${apiData.type}/${apiData.id}`
+const {url, type, id} = apiData
+const apiUrl = `${url}${type}/${id}`
 
-console.log(apiUrl)
+fetch(apiUrl)
+    .then( (response) => response.json())
+    .then( (pokemon) => console.log(pokemon))
